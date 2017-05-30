@@ -1,0 +1,97 @@
+﻿<Window x:Class="StarWarsDatabase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarWarsDatabase"
+        mc:Ignorable="d"
+        Title="Star Wars Planets DB - Written By Ryan Claude Fox" Height="550" Width="850" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl x:Name="tabControl" Margin="0,28,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <TabItem Header="Planets">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <ListBox x:Name="planet_name_listbox" Width="168" Margin="10,26,0,0" SelectionChanged="planet_name_listbox_SelectionChanged" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" />
+                    <Label x:Name="planetname_label" Content="Planet Names" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="123"/>
+                    <Label x:Name="name_label" Content="Name" HorizontalAlignment="Left" Margin="192,10,0,0" VerticalAlignment="Top" Width="76"/>
+                    <Label x:Name="rotat_label" Content="Rotation Period" HorizontalAlignment="Left" Margin="192,50,0,0" VerticalAlignment="Top" Width="93"/>
+                    <Label x:Name="orb_label" Content="Orbital Period" HorizontalAlignment="Left" Margin="192,90,0,0" VerticalAlignment="Top" Width="93"/>
+                    <Label x:Name="dia_label" Content="Diameter" HorizontalAlignment="Left" Margin="192,131,0,0" VerticalAlignment="Top" Width="93"/>
+                    <Label x:Name="climate_label" Content="Climate" HorizontalAlignment="Left" Margin="192,171,0,0" VerticalAlignment="Top" Width="101" />
+                    <Label x:Name="gravity_label" Content="Gravity" HorizontalAlignment="Left" Margin="192,213,0,0" VerticalAlignment="Top" Width="101"/>
+                    <TextBox x:Name="name_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text ="{Binding Name, Mode=OneWay}" DataContext="{Binding SelectedValue, ElementName=planet_name_listbox}" IsReadOnly="True" />
+                    <TextBox x:Name="rotat_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text ="{Binding RotationPeriod, Mode=OneWay}" DataContext="{Binding SelectedValue, ElementName=planet_name_listbox}" IsReadOnly="True"/>
+                    <TextBox x:Name="orb_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding OrbitalPeriod, Mode=OneWay}" DataContext="{Binding OrbitalPeriod}" IsReadOnly="True"/>
+                    <TextBox x:Name="dia_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding Diameter,Mode=OneWay}" DataContext="{Binding Diameter}" IsReadOnly="True"/>
+                    <TextBox x:Name="climate_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding Climate, Mode=OneWay}" DataContext="{Binding Climate}" IsReadOnly="True" />
+                    <TextBox x:Name="gravity_txtbox" HorizontalAlignment="Left" Height="23" Margin="298,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding Gravity, Mode = OneWay}" DataContext="{Binding Gravity}" IsReadOnly="True"/>
+                    <Label x:Name="terrain_label" Content="Terrain" HorizontalAlignment="Left" Margin="480,10,0,0" VerticalAlignment="Top" Width="91"/>
+                    <Label x:Name="surwater_label" Content="Surface Water" HorizontalAlignment="Left" Margin="480,53,0,0" VerticalAlignment="Top" Width="91"/>
+                    <Label x:Name="population_label" Content="Population" HorizontalAlignment="Left" Margin="480,90,0,0" VerticalAlignment="Top" Width="91"/>
+                    <Label x:Name="created_label" Content="Created" HorizontalAlignment="Left" Margin="480,131,0,0" VerticalAlignment="Top" Width="91"/>
+                    <Label x:Name="edited_label" Content="Edited" HorizontalAlignment="Left" Margin="480,174,0,0" VerticalAlignment="Top" Width="91"/>
+                    <Label x:Name="url_label" Content="URL" HorizontalAlignment="Left" Margin="480,213,0,0" VerticalAlignment="Top" Width="91"/>
+                    <TextBox x:Name="terrian_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding Terrain, Mode=OneWay}" DataContext="{Binding Terrain}" IsReadOnly="True"/>
+                    <TextBox x:Name="surwater_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding SurfaceWater, Mode=OneWay}" DataContext="{Binding SurfaceWater}" IsReadOnly="True"/>
+                    <TextBox x:Name="population_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding Population, Mode=OneWay}" DataContext="{Binding Population}" IsReadOnly="True"/>
+                    <TextBox x:Name="created_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding Created, Mode=OneWay}" DataContext="{Binding Created}" IsReadOnly="True"/>
+                    <TextBox x:Name="edited_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding Edited, Mode=OneWay}" DataContext="{Binding Edited}" IsReadOnly="True"/>
+                    <TextBox x:Name="url_txtbox" HorizontalAlignment="Left" Height="23" Margin="571,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Text="{Binding Url, Mode=OneWay}" DataContext="{Binding Url}" IsReadOnly="True"/>
+                    <Label x:Name="label2" Content="Films" HorizontalAlignment="Left" Margin="192,278,0,0" VerticalAlignment="Top" Width="76"/>
+                    <ListBox x:Name="film_list_box" HorizontalAlignment="Left" Height="138" Margin="192,309,0,0" VerticalAlignment="Top" Width="292"/>
+                    <Label x:Name="label2_Copy" Content="Residents" HorizontalAlignment="Left" Margin="523,278,0,0" VerticalAlignment="Top" Width="76"/>
+                    <ListBox x:Name="resident_list_box" HorizontalAlignment="Left" Height="138" Margin="523,309,0,0" VerticalAlignment="Top" Width="317"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Add New Planet" Margin="-2,-2,-11,0">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-13,-10">
+                    <Button Name="insert_new_planet_btn" Content="Insert New Planet Into DB" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="288" Click="insert_new_planet" />
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Rotation Period" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Orbital Period" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Diameter" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Climate" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Gravity" HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Terrain" HorizontalAlignment="Left" Margin="400,60,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Surface Water" HorizontalAlignment="Left" Margin="400,101,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Population" HorizontalAlignment="Left" Margin="400,141,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Created" HorizontalAlignment="Left" Margin="400,176,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="Edited" HorizontalAlignment="Left" Margin="400,221,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Label Content="URL" HorizontalAlignment="Left" Margin="400,266,0,0" VerticalAlignment="Top" Width="96"/>
+                    <TextBox Name="new_planet_name_txtbox" HorizontalAlignment="Left" Height="23" Margin="111,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_rotat_txtbox" HorizontalAlignment="Left" Height="23" Margin="111,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_orb_txtbox"  HorizontalAlignment="Left" Height="23" Margin="111,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_diameter_txtbox" HorizontalAlignment="Left" Height="23" Margin="111,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name ="new_planet_climate_txtbox" HorizontalAlignment="Left" Height="23" Margin="111,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name ="new_planet_gravity_txtbox" HorizontalAlignment="Left" Height="23" Margin="111,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_terrain_txtbox"  HorizontalAlignment="Left" Height="23" Margin="501,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_surfwater_txtbox" HorizontalAlignment="Left" Height="23" Margin="501,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_population_txtbox" HorizontalAlignment="Left" Height="23" Margin="501,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name ="new_planet_created_txtbox" HorizontalAlignment="Left" Height="23" Margin="501,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name ="new_planet_edited_txtbox" HorizontalAlignment="Left" Height="23" Margin="501,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <TextBox Name="new_planet_url_txtbox" HorizontalAlignment="Left" Height="23" Margin="501,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+                    <Label Content="New Film" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="67"/>
+                    <TextBox Name="new_film_txtbox" HorizontalAlignment="Left" Height="23" Margin="112,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+                    <Button  Name ="add_film_btn" Content="Add Film" HorizontalAlignment="Left" Margin="320,340,0,0" VerticalAlignment="Top" Width="81" Height="23" Click="add_film"/>
+                    <ListBox Name="new_planet_films" HorizontalAlignment="Left" Height="100" Margin="111,376,0,0" VerticalAlignment="Top" Width="290"/>
+                    <Label Content="Films" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="67"/>
+                    <Label Content="New Resident" HorizontalAlignment="Left" Margin="430,338,0,0" VerticalAlignment="Top" Width="99"/>
+                    <TextBox Name ="new_resident_txtbox" HorizontalAlignment="Left" Height="23" Margin="521,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+                    <Button Name="add_resident_btn"  Content="Add Resident" HorizontalAlignment="Left" Margin="736,340,0,0" VerticalAlignment="Top" Width="95" Height="22" Click="add_resident"/>
+                    <ListBox Name="new_planet_residents" HorizontalAlignment="Left" Height="100" Margin="522,376,0,0" VerticalAlignment="Top" Width="310"/>
+                    <Label Content="Residents" HorizontalAlignment="Left" Margin="430,376,0,0" VerticalAlignment="Top" Width="74"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu x:Name="menu" Height="26" Margin="0,2,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Import from XML File" Click="import_from_xml_file"/>
+                <MenuItem Header="Import From JSON File" Click="import_from_json_file"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="exit" />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Name ="about_menu_item" Header="About.." Click="about_info"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

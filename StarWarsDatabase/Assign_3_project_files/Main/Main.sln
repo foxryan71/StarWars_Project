@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main Project", "Main Project\Main Project.csproj", "{405AF95E-7CEA-4BF6-AD6C-C59843891CCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ADE793F7-2C8C-4E8F-96AD-AC5B2A6E1E46}"
+	ProjectSection(SolutionItems) = preProject
+		Main Project\bin\Debug\Person.json = Main Project\bin\Debug\Person.json
+		Main Project\bin\Debug\PersonCollection.json = Main Project\bin\Debug\PersonCollection.json
+		Main Project\bin\Debug\Planet.json = Main Project\bin\Debug\Planet.json
+		Main Project\bin\Debug\PlanetCollection.json = Main Project\bin\Debug\PlanetCollection.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{405AF95E-7CEA-4BF6-AD6C-C59843891CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405AF95E-7CEA-4BF6-AD6C-C59843891CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405AF95E-7CEA-4BF6-AD6C-C59843891CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405AF95E-7CEA-4BF6-AD6C-C59843891CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
